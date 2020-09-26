@@ -1,0 +1,7 @@
+{
+  "name": "TPFinalDenisGenero",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

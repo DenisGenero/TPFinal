@@ -1,0 +1,22 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Denis App!
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-button (click)="onClick()" expand="block" fill="clear" shape="round">
+    Click me
+  </ion-button>
+
+  <div *ngFor = "let dis of dispositivos">
+    {{dis.id}}
+    {{dis.address}}
+    {{dis.name}}
+    <ion-button (click)="Conectar (dis.address)">
+      Conectar
+    </ion-button>
+  </div>
+</ion-content>

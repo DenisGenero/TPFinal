@@ -11,6 +11,10 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'botones',
+    loadChildren: () => import('./botones/botones.module').then( m => m.BotonesPageModule)
+  },
 ];
 
 @NgModule({

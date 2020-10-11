@@ -1,0 +1,134 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Control RGB</ion-title>
+    <ion-button (click)="Desconectar()" shape="round" color="medium" slot="start" defaultHref='/home'>
+      <ion-icon name="arrow-back"></ion-icon>
+      Desconectar
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Primera fila de botones -->
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <div>
+          <ion-button (click)="MaxRojo()" expand="full"color="danger" shape="round" slot="start">
+            MAX
+          </ion-button>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          <ion-button (click)="MaxVerde()" expand="full" color="success" shape="round" slot="start">
+            MAX
+          </ion-button>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          <ion-button (click)="MaxAzul()" expand="full" color="primary" shape="round" slot="start">
+            MAX
+          </ion-button>
+        </div>
+      </ion-col>
+    </ion-row>
+
+<!-- Segunda fila de botones -->
+    <ion-row>
+      <ion-col>
+        <div>
+          <ion-button (click)="AumentarRojo()" expand="full"color="danger" shape="round" slot="start">
+            <ion-icon name="arrow-up"></ion-icon>
+          </ion-button>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          <ion-button (click)="AumentarVerde()" expand="full" color="success" shape="round" slot="start">
+            <ion-icon name="arrow-up"></ion-icon>
+          </ion-button>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          <ion-button (click)="AumentarAzul()" expand="full" color="primary" shape="round" slot="start">
+            <ion-icon name="arrow-up"></ion-icon>
+          </ion-button>
+        </div>
+      </ion-col>
+    </ion-row>
+
+<!-- Tercera fila de botones -->
+    <ion-row>
+      <ion-col>
+        <div>
+          <ion-button (click)="DisminuirRojo()" expand="full" color="danger" shape="round" slot="start">
+           <ion-icon name="arrow-down"></ion-icon>
+          </ion-button>
+       </div>
+      </ion-col>
+     <ion-col>
+        <div>
+          <ion-button (click)="DisminuirVerde()" expand="full" color="success" shape="round" slot="start">
+            <ion-icon name="arrow-down"></ion-icon>
+          </ion-button>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          <ion-button (click)="DisminuirAzul()" expand="full" color="primary" shape="round" slot="start">
+            <ion-icon name="arrow-down"></ion-icon>
+          </ion-button>
+        </div>
+      </ion-col>
+    </ion-row>
+
+<!-- Cuarta fila de botones -->
+    <ion-row>
+      <ion-col>
+       <div>
+         <ion-button (click)="ApagarRojo()" expand="full" color="danger" shape="round" slot="start">
+           OFF
+         </ion-button>
+        </div>
+     </ion-col>
+     <ion-col>
+       <div>
+         <ion-button (click)="ApagarVerde()" expand="full" color="success" shape="round" slot="start">
+            OFF
+         </ion-button>
+       </div>
+     </ion-col>
+     <ion-col>
+       <div>
+         <ion-button (click)="ApagarAzul()" expand="full" color="primary" shape="round" slot="start">
+           OFF
+         </ion-button>
+       </div>
+      </ion-col>
+   </ion-row>
+
+<!-- Cuarta fila de botones -->
+  <!-- Boton de encendido y apagado -->
+    <ion-row>
+      <ion-col>
+        <div>
+          <ion-button (click)="EncenderTodo()" expand="full" color="light" shape="round" slot="start">
+            Blanco
+            <ion-icon name="bulb"></ion-icon>
+          </ion-button>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          <ion-button (click)="ApagarTodo()" expand="full" color="dark" shape="round" slot="end">
+            Apagar
+            <ion-icon name="eye-off"></ion-icon>
+          </ion-button>
+       </div>
+     </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

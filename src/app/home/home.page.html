@@ -1,22 +1,180 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Denis App!
-    </ion-title>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <div>
+            <ion-title color="danger">
+              <p>Denis App!</p>
+            </ion-title>
+          </div>
+        </ion-col>
+        <ion-col>
+          <div>
+            <ion-button (click)="Escanear()" color="tertiary" shape="round">
+              <ion-icon name="Bluetooth"></ion-icon>
+              Escanear
+            </ion-button>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <div>
+            Lista de dispositivos cercanos:
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <div *ngFor = "let dis of dispositivos">
+          {{dis.id}}
+          {{dis.address}}
+          {{dis.name}}
+          <ion-button (click)="Conectar (dis.address)">
+            Conectar
+          </ion-button>
+        </div>
+      </ion-row>
+    </ion-grid>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-button (click)="onClick()" expand="block" fill="clear" shape="round">
-    Click me
-  </ion-button>
 
-  <div *ngFor = "let dis of dispositivos">
-    {{dis.id}}
-    {{dis.address}}
-    {{dis.name}}
-    <ion-button (click)="Conectar (dis.address)">
-      Conectar
-    </ion-button>
-  </div>
+  <!-- Primera fila de botones -->
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <div>
+          <ion-title>Control RGB</ion-title>
+        </div>  
+      </ion-col>
+      <ion-col>
+        <div>
+          <ion-button (click)="Desconectar()" shape="round" color="medium" slot="start">
+            Desconectar
+          </ion-button>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <div>
+          <ion-button (click)="MaxRojo()" expand="full"color="danger" shape="round" slot="start">
+            MAX
+          </ion-button>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          <ion-button (click)="MaxVerde()" expand="full" color="success" shape="round" slot="start">
+            MAX
+          </ion-button>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          <ion-button (click)="MaxAzul()" expand="full" color="primary" shape="round" slot="start">
+            MAX
+          </ion-button>
+        </div>
+      </ion-col>
+    </ion-row>
+
+<!-- Segunda fila de botones -->
+    <ion-row>
+      <ion-col>
+        <div>
+          <ion-button (click)="AumentarRojo()" expand="full"color="danger" shape="round" slot="start">
+            <ion-icon name="arrow-up"></ion-icon>
+          </ion-button>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          <ion-button (click)="AumentarVerde()" expand="full" color="success" shape="round" slot="start">
+            <ion-icon name="arrow-up"></ion-icon>
+          </ion-button>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          <ion-button (click)="AumentarAzul()" expand="full" color="primary" shape="round" slot="start">
+            <ion-icon name="arrow-up"></ion-icon>
+          </ion-button>
+        </div>
+      </ion-col>
+    </ion-row>
+
+<!-- Tercera fila de botones -->
+    <ion-row>
+      <ion-col>
+        <div>
+          <ion-button (click)="DisminuirRojo()" expand="full" color="danger" shape="round" slot="start">
+           <ion-icon name="arrow-down"></ion-icon>
+          </ion-button>
+       </div>
+      </ion-col>
+     <ion-col>
+        <div>
+          <ion-button (click)="DisminuirVerde()" expand="full" color="success" shape="round" slot="start">
+            <ion-icon name="arrow-down"></ion-icon>
+          </ion-button>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          <ion-button (click)="DisminuirAzul()" expand="full" color="primary" shape="round" slot="start">
+            <ion-icon name="arrow-down"></ion-icon>
+          </ion-button>
+        </div>
+      </ion-col>
+    </ion-row>
+
+<!-- Cuarta fila de botones -->
+    <ion-row>
+      <ion-col>
+       <div>
+         <ion-button (click)="ApagarRojo()" expand="full" color="danger" shape="round" slot="start">
+           OFF
+         </ion-button>
+        </div>
+     </ion-col>
+     <ion-col>
+       <div>
+         <ion-button (click)="ApagarVerde()" expand="full" color="success" shape="round" slot="start">
+            OFF
+         </ion-button>
+       </div>
+     </ion-col>
+     <ion-col>
+       <div>
+         <ion-button (click)="ApagarAzul()" expand="full" color="primary" shape="round" slot="start">
+           OFF
+         </ion-button>
+       </div>
+      </ion-col>
+   </ion-row>
+
+<!-- Cuarta fila de botones -->
+  <!-- Boton de encendido y apagado -->
+    <ion-row>
+      <ion-col>
+        <div>
+          <ion-button (click)="EncenderTodos()" expand="full" color="light" shape="round" slot="start">
+            Blanco
+            <ion-icon name="bulb"></ion-icon>
+          </ion-button>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          <ion-button (click)="ApagarTodos()" expand="full" color="dark" shape="round" slot="end">
+            Apagar
+            <ion-icon name="eye-off"></ion-icon>
+          </ion-button>
+       </div>
+     </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
